@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <p>Hi From App!</p>
+      <p>Hi From App! Checking git initialisation</p>
     </>
   )
 }
