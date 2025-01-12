@@ -1,7 +1,17 @@
+import Carousel from "../Carousels";
+import carouselImage from "../../assets/carouselImage.jpg";
 
 const Home = () => {
+  
+  const images = [
+    carouselImage,
+    carouselImage,
+    carouselImage
+  ]
   return (
-    <div>Home</div>
+    <div>
+      <Carousel items={images}/>
+    </div>
   )
 }
 
