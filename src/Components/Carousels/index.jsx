@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Carousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -15,8 +17,19 @@ const Carousel = ({ items }) => {
     );
   };
 
+  const handleNavigation = (name) => {
+    if (name === "agricultural") {
+      navigate("/agricultural-pumps");
+    } else if (name === "industrial") {
+      navigate("/industrial-pumps");
+    } else if (name === "residential") {
+      navigate("/residential-pumps");
+    }
+  }
+
   return (
-    <div className="relative w-full md:h-[550px] h-[450px]">
+    <div className="relative w-full md:h-[583px] h-[450px]">
+       <hr className="border-t-2 border-slate-900" />
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -27,10 +40,11 @@ const Carousel = ({ items }) => {
           {items.map((item, index) => (
             <div
               key={index}
-              className="min-w-full md:h-[550px] h-[450px] flex items-center object-cover justify-center"
+              className="min-w-full md:h-[583px] h-[450px] flex items-center object-cover justify-center cursor-pointer"
+              onClick={() => handleNavigation(item.name)}
             >
               <img
-                src={item}
+                src={item.image}
                 alt={`Slide ${index}`}
                 className="w-full h-full object-cover"
               />
