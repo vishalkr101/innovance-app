@@ -18,19 +18,19 @@ const Navbar = () => {
   
   return (
     <div className="navbar-container">
-      <div className="contact-details-stripe-container h-12 bg-slate-900 w-full">
+      <div className="contact-details-stripe-container h-12 bg-slate-900 w-full fixed z-10">
         <div className="contact-details-stripe flex gap-8 items-center justify-center h-full">
           <p className="text-white text-sm font-poppins">
             <FontAwesomeIcon icon={faPhone} className="mr-3" />
-            8882190865
+            9910061322
           </p>
           <p className="text-white text-sm font-poppins">
             <FontAwesomeIcon icon={faEnvelope} className="mr-3" />
-            vishalkr00700@gmail.com
+            info@innovance.co.in
           </p>
         </div>
       </div>
-      <div className="navbar h-24 w-full flex justify-between bg-gray-100">
+      <div className="navbar h-24 w-full flex justify-between bg-gray-100 fixed z-10 top-12">
         <div className="logo-container flex items-center h-full ml-6 md:ml-10 lg:ml-16">
           <Link to="/">
             <img src={arise} alt="logo" className="h-18" />
@@ -49,13 +49,13 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item relative group our-products-dropdown">
-              <Link to="/products" className="nav-link flex items-center hover:text-slate-700">
+              <div className="nav-link flex items-center hover:text-slate-700 cursor-pointer">
                 OUR PRODUCTS <FontAwesomeIcon icon={faChevronDown} className="text-xs"/>
-              </Link>
-              <div className="absolute w-64 hidden group-hover:block animate__animated animate__fadeIn z-10">
-                <Link to="/products-1" className="dropdown-item block hover:text-slate-700 mt-11 border-b border-gray-400 mb-2">AGRICULTURAL PUMP</Link>
-                <Link to="/products-2" className="dropdown-item block hover:text-slate-700 border-b border-gray-400 mb-2">INDUSTRIAL PUMP</Link>
-                <Link to="/products-3" className="dropdown-item block hover:text-slate-700 border-b border-gray-400 mb-2">RESIDENTIAL PUMP</Link>
+              </div>
+              <div className="absolute w-64 hidden group-hover:block animate__animated animate__fadeIn bg-gray-100 z-10 rounded">
+                <Link to="/agricultural-pumps" className="dropdown-item block hover:text-slate-800 mt-11 border-b border-gray-400 mb-2">AGRICULTURAL PUMP</Link>
+                <Link to="/industrial-pumps" className="dropdown-item block hover:text-slate-800 border-b border-gray-400 mb-2">INDUSTRIAL PUMP</Link>
+                <Link to="/residential-pumps" className="dropdown-item block hover:text-slate-800 border-b border-gray-400">RESIDENTIAL PUMP</Link>
               </div>
             </li>
             <li className="nav-item">
@@ -73,7 +73,7 @@ const Navbar = () => {
       </div>
       <hr className="border-t-2 border-slate-900" />
       {navbarTable && (
-        <div className={`sm:hidden block animate__animated ${animationClass}`}>
+        <div className={`sm:hidden block animate__animated ${animationClass} mt-36 mb-[-144px]`}>
           <ul className="flex flex-col items-center gap-3 justify-center h-full">
             <li className="nav-item">
               <Link to="/" className="nav-link flex items-baseline gap-1 hover:text-slate-700 mt-4">
@@ -100,7 +100,6 @@ const Navbar = () => {
             </li>
             <hr className="bg-gray-100 w-full" />
           </ul>
-          <hr className="border-t-2 border-slate-900" />
         </div>
       )}
     </div>
